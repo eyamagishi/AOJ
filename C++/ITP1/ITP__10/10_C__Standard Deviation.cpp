@@ -12,11 +12,9 @@ int main(){
   while(cin >> students){
     if(students == 0)break;
     double average = 0, standard_deviation = 0, points[students] = {};
-    for(int i = 0;i < students;i++)cin >> points[i];
+    for(int i = 0;i < students;i++) cin >> points[i];
     average = accumulate(points, points + students, 0) / double(students);
-    for(int i = 0;i < students;i++){
-      standard_deviation += pow(points[i] - average, 2);
-    }
+    for(int i = 0;i < students;i++) standard_deviation += pow(points[i] - average, 2);
     standard_deviation = sqrt(standard_deviation / students);
     cout << standard_deviation << endl;
   }
